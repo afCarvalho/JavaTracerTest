@@ -1,5 +1,3 @@
-package ist.meic.pa.tests;
-
 import ist.meic.pa.Trace;
 
 import java.util.*;
