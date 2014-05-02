@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Tracer-Test" basedir=".">
+
+	<property name="src.dir" value="src" />
+	<property name="classes.dir" value="classes" />
+	<property name="lib.dir" value="../Java-Tracer/lib" />
+	<property name="tracer.dir" value="../Java-Tracer/" />
+
+	<path id="project.classpath">
+		<pathelement location="${classes.dir}" />
+		<fileset dir="${lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${tracer.dir}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+
+	<target name="init">
+		<mkdir dir="${classes.dir}" />
+	</target>
+
+	<target name="clean">
+		<delete dir="${classes.dir}" />
+	</target>
+
+	<target name="compile" depends="clean,init">
+		<javac destdir="${classes.dir}" debug="true" includeantruntime="false">
+			<classpath refid="project.classpath" />
+			<src>
+				<pathelement path="${src.dir}" />
+			</src>
+		</javac>
+	</target>
+
+	<target name="run" depends="compile">
+		<java classname="ist.meic.pa.TraceVM" fork="true">
+			<classpath>
+				<path refid="project.classpath" />
+			</classpath>
+			<arg value="Test2" />
+		</java>
+	</target>
+
+</project>
