@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="Tracer-Test" basedir=".">
+<project name="TracerTest" basedir=".">
 
 	<property name="src.dir" value="src" />
 	<property name="classes.dir" value="classes" />
-	<property name="lib.dir" value="../Java-Tracer/lib" />
-	<property name="tracer.dir" value="../Java-Tracer/" />
+	<property name="lib.dir" value="../Tracer/lib" />
+	<property name="tracer.dir" value="../Tracer/" />
 
 	<path id="project.classpath">
 		<pathelement location="${classes.dir}" />
@@ -27,11 +27,12 @@
 	</target>
 
 	<target name="compile" depends="clean,init">
-		<javac destdir="${classes.dir}" debug="true" includeantruntime="false">
+		<javac destdir="${classes.dir}" debug="true" includeantruntime="false" target="1.6" source="1.6">
 			<classpath refid="project.classpath" />
 			<src>
 				<pathelement path="${src.dir}" />
 			</src>
+			<!--<compilerarg value="-Xlint"/>-->
 		</javac>
 	</target>
 
