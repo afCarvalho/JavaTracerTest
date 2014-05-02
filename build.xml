@@ -36,8 +36,17 @@
 		</javac>
 	</target>
 
-	<target name="run" depends="compile">
+	<target name="runTraceVM" depends="compile">
 		<java classname="ist.meic.pa.TraceVM" fork="true">
+			<classpath>
+				<path refid="project.classpath" />
+			</classpath>
+			<arg value="Test2" />
+		</java>
+	</target>
+	
+	<target name="runTrace" depends="compile">
+		<java classname="ist.meic.pa.Trace" fork="true">
 			<classpath>
 				<path refid="project.classpath" />
 			</classpath>
