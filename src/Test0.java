@@ -1,6 +1,7 @@
 import ist.meic.pa.Trace;
 
 class Test00 {
+	
 	public Object foo() {
 		return new String("Foo");
 	}
