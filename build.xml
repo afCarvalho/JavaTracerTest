@@ -35,6 +35,15 @@
 			<!--<compilerarg value="-Xlint"/>-->
 		</javac>
 	</target>
+	
+	<target name="runTraceVMExtended" depends="compile">
+		<java classname="ist.meic.pa.TraceVMExtended" fork="true">
+			<classpath>
+				<path refid="project.classpath" />
+			</classpath>
+			<arg value="Test2" />
+		</java>
+	</target>
 
 	<target name="runTraceVM" depends="compile">
 		<java classname="ist.meic.pa.TraceVM" fork="true">
